@@ -1,10 +1,12 @@
-// import { useState } from 'react';
 import './App.scss';
+import MainContent from '../MainContent/MainContent';
 
 function App() {
   return (
     <>
-      <h1>Future spellcheck</h1>
+      <div className="App">
+        <MainContent />
+      </div>
     </>
   );
 }
