@@ -1,0 +1,28 @@
+:root {
+  --font-color: #242424;
+  --bg-color: rgba(255, 255, 255, 0.87);
+  --button-color: lightgray;
+
+  color-scheme: light dark;
+}
+
+body {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  margin: 0;
+  color: var(--font-color);
+  background-color: var(--bg-color);
+}
+
+.base-title {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --font-color: #242424;
+    --bg-color: #ffffff;
+  }
+}
