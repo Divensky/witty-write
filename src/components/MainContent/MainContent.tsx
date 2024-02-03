@@ -1,7 +1,7 @@
 import { fetchTextCheck, ErrorItem } from '../../api/textGearsApi';
 import { useState } from 'react';
 import './MainContent.scss';
-// import Suggestions from './components/Suggestions/Suggestions';
+import Suggestions from '../Suggestions/Suggestions';
 
 export default function MainContent() {
   const [textToBeChecked, setTextToBeChecked] = useState('');
@@ -20,14 +20,10 @@ export default function MainContent() {
     }
     console.log('errors found', res.response.errors);
     setSuggestionsList(res.response.errors);
-    
+
     /* sample text to check:
       'My mother are a doctor, but my father is a angeneer'
-
-      todo: add next component
-      <Suggestions suggestionsList={suggestionsList}/>
     */
-
   }
   return (
     <>
@@ -44,7 +40,7 @@ export default function MainContent() {
           <button onClick={handleClick}>Check my text</button>
         </div>
       </div>
-      
+      <Suggestions suggestionsList={suggestionsList} />
     </>
   );
 }
