@@ -1,6 +1,11 @@
 .suggestions {
+  opacity: 0.3;
+
+  &_active {
+    opacity: 1;
+  }
+
   &__container {
-    background-color: gainsboro;
-    min-height: 200px;
+    outline: 1px solid gainsboro;
   }
 }
