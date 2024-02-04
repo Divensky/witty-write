@@ -4,7 +4,9 @@ import './MainContent.scss';
 import Suggestions from '../Suggestions/Suggestions';
 
 export default function MainContent() {
-  const [textToBeChecked, setTextToBeChecked] = useState('');
+  const [textToBeChecked, setTextToBeChecked] = useState(
+    'My mother are a doctor, but my father is a angeneer'
+  );
   const [suggestionsList, setSuggestionsList] = useState<ErrorItem[]>([]);
 
   async function handleClick() {
@@ -35,7 +37,9 @@ export default function MainContent() {
           onInput={(event: React.FormEvent<HTMLDivElement>) => {
             setTextToBeChecked(event.currentTarget.textContent || '');
           }}
-        ></div>
+        >
+          {textToBeChecked}
+        </div>
         <div className="text__button-container">
           <button onClick={handleClick}>Check my text</button>
         </div>
