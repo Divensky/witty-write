@@ -1,5 +1,6 @@
 import './Suggestions.scss';
 import { ErrorItem } from '../../api/textGearsApi';
+import { prepSuggestions } from '../../utils/prepSuggestions';
 
 interface SuggestionsProps {
   suggestionsList: ErrorItem[];
@@ -7,16 +8,35 @@ interface SuggestionsProps {
 
 export default function Suggestions(props: SuggestionsProps) {
   const { suggestionsList } = props;
+  const isActive = suggestionsList.length;
+  const activeClass = isActive ? 'suggestions_active' : '';
+  const preppedSuggestions = prepSuggestions(suggestionsList);
 
   return (
     <>
-      <div className="suggestions">
-        <h2 className="suggestions__title base-title">All suggestions</h2>
+      <div className={`suggestions ${activeClass}`}>
+        <h2 className="suggestions__title base-title">WittyWrite suggests</h2>
         <div className="suggestions__container">
-          {suggestionsList.map(
+          {preppedSuggestions.map(
             (suggestion, index) =>
               suggestion.description && (
-                <p key={index}>{JSON.stringify(suggestion.description)}</p>
+                <div key={index} className="suggestions__item">
+                  <p>{suggestion.description}</p>
+                  <p>
+                    Word <strong>{suggestion.bad}</strong> may need to be
+                    changed to{' '}
+                    {suggestion.better?.map((word, index) => (
+                      <span key={index}>
+                        <strong className="suggestions__better-word">
+                          {word}
+                        </strong>
+                        {suggestion.better &&
+                          index < suggestion.better?.length - 1 &&
+                          ' | '}
+                      </span>
+                    ))}
+                  </p>
+                </div>
               )
           )}
         </div>

@@ -6,6 +6,7 @@ import Suggestions from '../Suggestions/Suggestions';
 export default function MainContent() {
   const [textToBeChecked, setTextToBeChecked] = useState('');
   const [suggestionsList, setSuggestionsList] = useState<ErrorItem[]>([]);
+  // const defaultText = 'My mother are a doctor, but my father is a angeneer';
 
   async function handleClick() {
     console.log('textToBeChecked', textToBeChecked);
@@ -13,8 +14,7 @@ export default function MainContent() {
     if (
       !res ||
       !res.response ||
-      !res.response.errors ||
-      res.response.errors.length <= 0
+      !res.response.errors
     ) {
       return;
     }
@@ -28,7 +28,7 @@ export default function MainContent() {
   return (
     <>
       <div className="text">
-        <h2 className="text__title base-title">Drop text here</h2>
+        <h2 className="text__title base-title">Drop Your Text Here</h2>
         <div
           contentEditable
           className="text__editable-container"

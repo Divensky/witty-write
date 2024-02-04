@@ -1,10 +1,6 @@
 .text {
-  &__title {
-    color: aquamarine;
-  }
-
   &__editable-container {
-    outline: 1px solid green;
+    box-shadow: 0 2px 7px rgba(12, 114, 44, 0.5);
     min-height: 200px;
     margin: 2em;
   }

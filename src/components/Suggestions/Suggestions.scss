@@ -1,6 +1,34 @@
 .suggestions {
-  &__container {
-    background-color: gainsboro;
-    min-height: 200px;
+  opacity: 0.3;
+
+  &_active {
+    opacity: 1;
+  }
+
+  &__item {
+    margin: 0 0 12px;
+    padding: 5px 10px;
+    line-height: normal;
+    border-radius: 4px;
+    transition: 0.2s ease;
+    box-shadow: 0 2px 7px rgb(0 0 0 / 25%);
+
+    &:hover,
+    &:focus,
+    &:active,
+    &:focus-visible {
+      box-shadow: 0 2px 7px rgb(0 0 0 / 50%);
+      cursor: pointer;
+    }
+  }
+
+  &__better-word {
+    &:hover,
+    &:focus,
+    &:active,
+    &:focus-visible {
+      text-decoration: underline;
+      cursor: pointer;
+    }
   }
 }
