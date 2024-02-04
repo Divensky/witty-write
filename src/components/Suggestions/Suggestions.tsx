@@ -27,9 +27,12 @@ export default function Suggestions(props: SuggestionsProps) {
                     changed to{' '}
                     {suggestion.better?.map((word, index) => (
                       <span key={index}>
-                        <strong className='suggestions__better-word'>{word}</strong>
+                        <strong className="suggestions__better-word">
+                          {word}
+                        </strong>
                         {suggestion.better &&
-                          (index < suggestion.better?.length - 1 ? ' | ' : '')}
+                          index < suggestion.better?.length - 1 &&
+                          ' | '}
                       </span>
                     ))}
                   </p>
