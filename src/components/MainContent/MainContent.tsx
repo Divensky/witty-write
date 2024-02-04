@@ -30,7 +30,7 @@ export default function MainContent() {
   return (
     <>
       <div className="text">
-        <h2 className="text__title base-title">Drop text here</h2>
+        <h2 className="text__title base-title">Drop Your Text Here</h2>
         <div
           contentEditable
           className="text__editable-container"
