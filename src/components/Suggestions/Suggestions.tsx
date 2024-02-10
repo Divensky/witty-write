@@ -32,6 +32,7 @@ export default function Suggestions(props: SuggestionsProps) {
                         </strong>
                         {suggestion.better &&
                           index < suggestion.better?.length - 1 &&
+                          word.length > 0 &&
                           ' | '}
                       </span>
                     ))}
