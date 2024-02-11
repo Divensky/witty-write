@@ -14,7 +14,7 @@ export default function Suggestions(props: SuggestionsProps) {
 
   return (
     <>
-      <div className={`suggestions ${activeClass}`}>
+      <aside className={`suggestions ${activeClass}`}>
         <h2 className="suggestions__title base-title">WittyWrite suggests</h2>
         <div className="suggestions__container">
           {preppedSuggestions.map(
@@ -23,8 +23,10 @@ export default function Suggestions(props: SuggestionsProps) {
                 <div key={index} className="suggestions__item">
                   <p>{suggestion.description}</p>
                   <p>
-                    Word <strong>{suggestion.bad}</strong> may need to be
-                    changed to{' '}
+                    Word <strong>{suggestion.bad}</strong>{' '}
+                    {suggestion.better && suggestion.better.length > 0
+                      ? 'may need to be changed to '
+                      : 'may need to be corrected.'}
                     {suggestion.better?.map((word, index) => (
                       <span key={index}>
                         <strong className="suggestions__better-word">
@@ -41,7 +43,7 @@ export default function Suggestions(props: SuggestionsProps) {
               )
           )}
         </div>
-      </div>
+      </aside>
     </>
   );
 }
