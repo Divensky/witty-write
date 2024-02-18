@@ -6,6 +6,7 @@ import ContentEditable from '../ContentEditable/ContentEditable';
 const MIN_INPUT_LENGTH = 4;
 const DEFAULT_TEXT =
   'Please type or paste your text or use the button below to insert a sample';
+const sampleTexts = ['My mother are a doctor, but my father is a angeneer'];
 
 export default function MainContent() {
   const [textToBeChecked, setTextToBeChecked] = useState(DEFAULT_TEXT);
@@ -33,6 +34,7 @@ export default function MainContent() {
       ) {
         return;
       }
+      //todo: implement caching so we don't fetch the same data twice, for example by using Set
       const fetchedSuggestions = await fetchSuggestions(textToBeChecked);
       console.log('fetched suggestions - errors found', fetchedSuggestions);
       setSuggestionsList(fetchedSuggestions);
@@ -45,9 +47,8 @@ export default function MainContent() {
   }, [textToBeChecked]);
 
   async function handleClick() {
-    /* sample text to check:
-      'My mother are a doctor, but my father is a angeneer'
-    */
+    setTextToBeChecked(() => sampleTexts[0]);
+    //todo: implement several versions of texts 
   }
 
   const handleInput: React.FormEventHandler = (evt) => {
