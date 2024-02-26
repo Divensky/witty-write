@@ -15,7 +15,7 @@ export default function Suggestions(props: SuggestionsProps) {
   return (
     <>
       <aside className={`suggestions ${activeClass}`}>
-        <h2 className="suggestions__title base-title">WittyWrite suggests</h2>
+        <h2 className="suggestions__title base-title">Suggestions to Improve Your Text</h2>
         <div className="suggestions__container">
           {preppedSuggestions.map(
             (suggestion, index) =>
