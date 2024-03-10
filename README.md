@@ -2,7 +2,7 @@
 
 Introducing WittyWrite, where correctness meets cleverness in the quest for impeccable text! 😃
 
-This React app can check your text and list suggestions for improvement.
+This React app checks any text you input and gives suggestions to improve grammar and spelling. Its data comes from [TextGears API](https://textgears.com). 
 
 ## How to run
 
