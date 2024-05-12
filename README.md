@@ -10,10 +10,13 @@ This React app checks any text you input and gives suggestions to improve gramma
 
 Make sure the API key is available in your local .env file.
 
-## More to come
+## Features
 
-This app is currently under development. You are welcome to share any suggestions. Here is how it looks now: 
+Type your text in the window on the left, and suggestions for improvement will appear in the window on the right:
 
 ![image](https://github.com/Divensky/witty-write/assets/116442718/72501ed5-fe30-422d-80cb-edaa9cbd2759)
 
+## More to come
+
+Please feel free to share any feedback or suggestions. 
 
